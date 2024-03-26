@@ -19,6 +19,7 @@ const DashboardFAQS = (props) => {
     const [inputValue, setInputValue] = useState('');
     const [textAreaValue, setTextAreaValue] = useState('');
 
+    const page = props.for
     const handleStateChange = (event) => {
         setSelectedState(event.target.value);
     };
@@ -31,58 +32,53 @@ const DashboardFAQS = (props) => {
         setTextAreaValue(event.target.value);
     };
 
-    const publishing = async() => {
-        console.log(selectedState);
-        console.log(inputValue);
-        console.log(textAreaValue);
-        
+    const publishing = async () => {
         let publish;
-        if(props.for==='home'){
-            publish = await fetch('http://localhost:4000/dashboardHome', {
+        if (props.for === 'home') {
+            publish = await fetch('http://13.127.109.224:4000/dashboardHome', {
                 method: 'post',
-                body: JSON.stringify({ selectedState, inputValue, textAreaValue }),
+                body: JSON.stringify({ selectedState, inputValue, textAreaValue, page }),
                 headers: { 'Content-Type': 'application/json' },
             })
         }
-        else if(props.for==='contactus'){
-            publish = await fetch('http://localhost:4000/dashboardContactUs', {
+        else if (props.for === 'contactus') {
+            publish = await fetch('http://13.127.109.224:4000/dashboardContactUs', {
                 method: 'post',
-                body: JSON.stringify({ selectedState, inputValue, textAreaValue }),
+                body: JSON.stringify({ page, selectedState, inputValue, textAreaValue }),
                 headers: { 'Content-Type': 'application/json' },
             })
         }
-        else if(props.for==='CountryInfo'){
-            publish = await fetch('http://localhost:4000/dashboardCountryInfoFaqs', {
+        else if (props.for === 'CountryInfo') {
+            publish = await fetch('http://13.127.109.224:4000/dashboardCountryInfoFaqs', {
                 method: 'post',
-                body: JSON.stringify({ selectedState, inputValue, textAreaValue }),
+                body: JSON.stringify({ page, selectedState, inputValue, textAreaValue }),
                 headers: { 'Content-Type': 'application/json' },
             })
         }
-        else if(props.for==='Events'){
-            publish = await fetch('http://localhost:4000/faqsdashboardEvents', {
+        else if (props.for === 'Events') {
+            publish = await fetch('http://13.127.109.224:4000/faqsdashboardEvents', {
                 method: 'post',
-                body: JSON.stringify({ selectedState, inputValue, textAreaValue }),
+                body: JSON.stringify({ page, selectedState, inputValue, textAreaValue }),
                 headers: { 'Content-Type': 'application/json' },
             })
         }
-        else if(props.for==='TestPrep'){
-            publish = await fetch('http://localhost:4000/faqsdashboardTestPrep', {
+        else if (props.for === 'TestPrep') {
+            publish = await fetch('http://13.127.109.224:4000/faqsdashboardTestPrep', {
                 method: 'post',
-                body: JSON.stringify({ selectedState, inputValue, textAreaValue }),
+                body: JSON.stringify({ page, selectedState, inputValue, textAreaValue }),
                 headers: { 'Content-Type': 'application/json' },
             })
         }
-        else{
-            publish = await fetch('http://localhost:4000/dashboardServices', {
+        else {
+            publish = await fetch('http://13.127.109.224:4000/dashboardServices', {
                 method: 'post',
-                body: JSON.stringify({ selectedState, inputValue, textAreaValue }),
+                body: JSON.stringify({ page, selectedState, inputValue, textAreaValue }),
                 headers: { 'Content-Type': 'application/json' },
             })
         }
 
         publish = await publish.json();
-
-        console.log("this is response from home "+publish);
+        console.log("this is response from home " + publish);
     }
     return (
         <div className='Dashboard-Faqs'>
@@ -91,9 +87,10 @@ const DashboardFAQS = (props) => {
                 <span>+ Add Question</span>
             </div>
             <div className='Dashboard-home-faqs-section'>
-                <div className="dropdown-container">
+                <div className="dropdown-container selectdiv">
                     <select id="stateSelect" value={selectedState} onChange={handleStateChange}>
                         <option value="123">Select the category</option>
+                        <option value="General">General</option>
                         <option value="Services">Services</option>
                         <option value="Admission">Admission</option>
                         <option value="Event">Event</option>

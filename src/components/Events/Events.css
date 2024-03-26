@@ -39,3 +39,7 @@
 .event-blk button:hover{
     background-color:#f4874c ;   
 }
+.drop-shaow-two{
+    box-shadow: 0px 2px 20px 1px #00000014;
+
+}

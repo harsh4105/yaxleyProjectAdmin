@@ -6,27 +6,27 @@ const DashboardSidebar = () => {
   return (
     <div className="sidebar">
       <div className="section">
-        <li><Link to='/' className='sidebar-links'>Home</Link></li>
+        <Link to='/' className='sidebar-links'>Home</Link>
         {/* <p>Lorem ipsum dolor sit amet, consectetur adip</p> */}
       </div>
       <div className="section">
-        <li><Link to='/service' className='sidebar-links'>Services</Link></li>
+        <Link to='/service' className='sidebar-links'>Services</Link>
         {/* <p>Lorem ipsum dolor sit amet, consectetur adip</p> */}
       </div>
       <div className="section">
-        <li><Link to='/countryInfo' className='sidebar-links'>Country Info</Link></li>
+      <Link to='/countryInfo' className='sidebar-links'>Country Info</Link>
         {/* <p>Lorem ipsum dolor sit amet, consectetur adip</p> */}
       </div>
       <div className="section">
-        <li><Link to='/contactUs' className='sidebar-links'>Contact Us</Link></li>
+        <Link to='/contactUs' className='sidebar-links'>Contact Us</Link>
         {/* <p>Lorem ipsum dolor sit amet, consectetur adip</p> */}
       </div>
       <div className="section">
-        <li><Link to='/events' className='sidebar-links'>Events</Link></li>
+        <Link to='/events' className='sidebar-links'>Events</Link>
         {/* <p>Lorem ipsum dolor sit amet, consectetur adip</p> */}
       </div>
       <div className="section">
-        <li><Link to='/testPrep' className='sidebar-links'>Test Prep</Link></li>
+        <Link to='/testPrep' className='sidebar-links'>Test Prep</Link>
         {/* <p>Lorem ipsum dolor sit amet, consectetur adip</p> */}
       </div>
     </div>

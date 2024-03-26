@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: DMSans_18pt_Medium;
   width: 90%;
 }
 .Dashboard-home-faqs-addQuetion span{
@@ -46,21 +47,24 @@ label {
 }
 
 .Dashboard-home-faqs-section{
-  margin: 20px;
+  margin: 0px 60px;
 }
 .Dashboard-home-faqs-section input{
-  padding: 15px;
+  padding: 14px;
   padding-left: 30px;
   border: 2px solid hsl(0, 1%, 63%);
   margin: 15px 0;
   border-radius: 30px;
-  width: 92%;
+  width: 93.5%;
+  font-size: 16px;
+  font-family: DMSans_18pt_Medium;
   /* border-color: #FF6612; */
 }
 .Dashboard-home-faqs-section textarea{
   border: 2px solid hsl(0, 1%, 63%);
   border-radius: 20px;
   padding: 20px;
+  font-family: DMSans_18pt_Medium;
   /* border-color: #FF6612; */
 }
 .Dashboard-home-faqs-section textarea:focus{
@@ -80,6 +84,7 @@ label {
   background-color: #FF6612;
   border: none;
   float: right;
+  font-family: DMSans_36pt_SemiBold;
   margin: 10px;
 }
 .dashboard-publish-btn:active{
@@ -92,7 +97,8 @@ label {
 }
 
 .dropdown-container select {
-  appearance: none; /* Remove default arrow */
+  /* appearance: none; */
+   /* Remove default arrow */
   padding: 15px 20px;
   font-size: 16px;
   border: 2px solid #ccc;
@@ -116,14 +122,63 @@ label {
 
 /* Style for dropdown container */
 .dropdown-container:before {
-  content: '\25BC';
+  /* content: '\25BC'; */
   position: relative;
   left: 690px;
   top: 35px;
   color:#FF6612;
 }
 
+
+
+.selectdiv {
+  position: relative;
+  float: left;
+  margin-top: 20px;
+}
+
+select::-ms-expand {
+     display: none;
+}
+
+.selectdiv:after {
+  content: '>';
+  font: 16px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 20px;
+  top: 18px;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+  position: absolute;
+  pointer-events: none;
+}
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 2px solid hsl(0, 1%, 63%);
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
 /* Style for dropdown container on hover */
 /* .dropdown-container:hover:before {
   color: #333; /* Change arrow color on hover */
 /* } */ 
+
+

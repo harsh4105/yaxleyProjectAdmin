@@ -45,3 +45,7 @@
 .course-search-bar button:hover{
    background-color: hsl(21, 87%, 73%);
 }
+
+.gradient-text-gradient-three {
+    background-image: linear-gradient(to right, #77FFA4, #7EB5FF); /* Customize the colors */
+  }

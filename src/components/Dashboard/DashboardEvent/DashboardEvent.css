@@ -20,6 +20,8 @@
 
 .Dashboard-Events-heading h2 {
     text-align: center;
+    font-family: DMSans_18pt_Medium;
+    font-size: 22px;
 }
 
 .Dashboard-Events-heading p {
@@ -39,6 +41,7 @@
 
 .new-annoucement-bar-heading h1 {
     font-size: large;
+    font-family: DMSans_18pt_Light;
 }
 
 .new-annoucement-bar-input-section {
@@ -47,6 +50,7 @@
     align-items: center;
     margin: 20px;
     width: 85%;
+    font-family: DMSans_18pt_Light;
 }
 
 .large-width {
@@ -74,27 +78,35 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .corousel-image-links-heading {
     width: 90%;
+    margin-top: 10px;
 }
 
 .corousel-image-links-heading h1 {
     font-size: large;
+    font-family: DMSans_18pt_Light;
+
 }
 
 .all-events-and-webinars {
     display: flex;
+    margin-top: 30px;
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    font-family: DMSans_18pt_Light;
     margin: auto;
 }
 
 .all-events-and-webinars p {
     color: #FF6612;
     font-size: medium;
+    margin-top: 10px;
+
 }
 
 /* **************************************** */
@@ -103,6 +115,8 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 
@@ -138,7 +152,7 @@
     outline: none;
     border: 2px solid #555555;
     width: 400px;
-    height: 200px;
+    height: 230px;
     margin-left: 50px;
 }
 
@@ -152,6 +166,7 @@
 .pointer-heading {
     width: 90%;
     margin: 10px;
+    margin-top: 20px;
 }
 
 .pointers {
@@ -184,6 +199,7 @@
     width: 90%;
     display: flex;
     justify-content: right;
+    font-family: DMSans_18pt_Medium;
 }
 
 .pushlish-btn button {
@@ -216,6 +232,8 @@
     height: 50px;
 }
 .previously-heading{
-    margin: 20px 0;
+    margin: 20px 30px;
+    margin-top: 40px;
     text-align: center;
+    font-family: DMSans_36pt_SemiBold;
 }

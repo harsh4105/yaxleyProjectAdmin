@@ -1,9 +1,26 @@
 import React from "react";
 import './AllEventAW.css';
+import { useState,useEffect } from "react";
 import UpcomingEAW from '../images/UpcomingEAW.png';
 import UpcomingEventsAndWebinarImg from '../images/UpcomingEventsAndWebinarImg.png';
+import webinar from "../images/webinars.jpg";
 
 const AllEventAW = () => {
+
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    },[]);
+
+    const fetchData = async () => {
+        const response = await fetch('http://13.127.109.224:4000/dashboardEvents');
+        const result = await response.json();
+        setData(result);
+    };
+
+
     return (
         <div className="upcoming-webinar-for-event">
             <div className="upcoming-section-headings">
@@ -21,7 +38,22 @@ const AllEventAW = () => {
                 </div>
             </div>
             <div className="upcoming-events-blocks-section">
-                <div className="upcoming-events-block">
+            {
+                data.map((values)=>(
+                    <div className="upcoming-events-block">
+                        <img src={webinar} alt="Events-img" className="upcoming-events-image" />
+                        <p className="upcoming-events-date">{values.date}</p>
+                        <p className="upcoming-events-eventHeading">{values.eventHeading}</p>
+                        <p className="upcoming-events-description">{ values.description.slice(0, 180)}<span className="upcoming-events-description-more">...More</span></p>
+                        <div className="upcoming-events-btn-container">
+                                <button>See Full Event</button>
+                                <button>Register Now</button>
+                        </div>
+                    </div>
+                ))
+            }
+               
+                {/* <div className="upcoming-events-block">
                     <img src={UpcomingEventsAndWebinarImg} alt="Events-img" />
                 </div>
                 <div className="upcoming-events-block">
@@ -29,10 +61,7 @@ const AllEventAW = () => {
                 </div>
                 <div className="upcoming-events-block">
                     <img src={UpcomingEventsAndWebinarImg} alt="Events-img" />
-                </div>
-                <div className="upcoming-events-block">
-                    <img src={UpcomingEventsAndWebinarImg} alt="Events-img" />
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ const DashboardEvents = () => {
     useEffect(() => {
         fetchData();
         fetchData2();
-    });
+    },[]);
     const [LT1, setLt1] = useState('');
     const [PU1, setPU1] = useState('');
     const [PU2, setPU2] = useState('');
@@ -80,7 +80,7 @@ const DashboardEvents = () => {
         formData.append('images', images[3]);
 
         try {
-            const res = await axios.post('http://localhost:4000/dashboardEvents', formData, {
+            const res = await axios.post('http://13.127.109.224:4000/dashboardEvents', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -92,13 +92,13 @@ const DashboardEvents = () => {
     };
 
     const fetchData = async () => {
-        const response = await fetch('http://localhost:4000/dashboardEvents');
+        const response = await fetch('http://13.127.109.224:4000/dashboardEvents');
         const result = await response.json();
         setData(result);
     };
 
     const fetchData2 = async () => {
-        const response2 = await fetch('http://localhost:4000/faqsdashboardEvents');
+        const response2 = await fetch('http://13.127.109.224:4000/faqsdashboardEvents');
         const result2 = await response2.json();
         setData2(result2);
     };

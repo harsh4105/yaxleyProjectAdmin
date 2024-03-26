@@ -14,7 +14,10 @@ import Dashboard from './components/Dashboard/DashboardMain/DashboardMain';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+<Dashboard/>
+      
+    {/* <BrowserRouter>
       <Navbar />
       <Routes>
          <Route path="/" element={<HomePage />} />
@@ -26,7 +29,9 @@ function App() {
          <Route path="/usacountry" element={<USAPage />} />
       </Routes>
       <Footer />
-   </BrowserRouter>
+   </BrowserRouter> */}
+   </>
+
   );
 }
 

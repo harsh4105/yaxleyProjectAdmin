@@ -16,4 +16,14 @@
 .previously-added{
     margin-left: 60px;
     margin-bottom: 10px;
+    font-family: DMSans_18pt_Medium;
+}
+
+.Dashboard-home-heading{
+    font-size: 24px !important;
+    font-family: DMSans_18pt_Medium;
+}
+
+.sidebar-links{
+
 }

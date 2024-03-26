@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './FaqsAccordion.css';
+import { AiOutlinePlus } from "react-icons/ai";
+import { MdOutlineCancel } from "react-icons/md";
 
 const FaqsAccordion = (prop) => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -13,14 +15,14 @@ const FaqsAccordion = (prop) => {
             {sections.map((section, index) => (
                 <div className="accordion-section" key={index}>
                     <div className="accordion-header" onClick={() => handleToggle(index)}>
-                        <h2>{section.heading}</h2>
+                        <h2 className='!text-[19px] w-[80%] font-semibold Raleway_Bold'>{section.heading}</h2>
                         {
-                            activeIndex === index ? <span className='arrow'>x</span> : <span className='arrow'>+</span>
+                            activeIndex === index ? <span className='arrow'><MdOutlineCancel/></span> : <span className='arrow'><AiOutlinePlus/></span>
                         }
                     </div>
                     {activeIndex === index && (
-                        <div className="accordion-content">
-                            <p>{section.description}</p>
+                        <div className="accordion-content ">
+                            <p className='text-[#727272] Raleway_Bold'>{section.description}</p>
                         </div>
                     )}
                 </div>

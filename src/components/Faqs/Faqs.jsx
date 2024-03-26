@@ -20,7 +20,7 @@ const Faqs = () => {
     
     const fetchHomeData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/dashboardHome');
+            const response = await fetch('http://13.127.109.224:4000/dashboardHome');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -32,7 +32,7 @@ const Faqs = () => {
     };
     const fetchServiceData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/dashboardServices');
+            const response = await fetch('http://13.127.109.224:4000/dashboardServices');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -44,7 +44,7 @@ const Faqs = () => {
     };
     const fetchContactUsData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/dashboardContactUs');
+            const response = await fetch('http://13.127.109.224:4000/dashboardContactUs');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -56,7 +56,7 @@ const Faqs = () => {
     };
     const fetchCountryData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/dashboardCountryInfoFaqs');
+            const response = await fetch('http://13.127.109.224:4000/dashboardCountryInfoFaqs');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -68,7 +68,7 @@ const Faqs = () => {
     };
     const fetchTestPrepData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/dashboardTestPrep');
+            const response = await fetch('http://13.127.109.224:4000/dashboardTestPrep');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -80,7 +80,7 @@ const Faqs = () => {
     };
     const fetchEventsData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/dashboardEvents');
+            const response = await fetch('http://13.127.109.224:4000/dashboardEvents');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -106,28 +106,28 @@ const Faqs = () => {
         console.log("ServicesFaqs");
     }
     return (
-        <div className="faqs-section">
-            <h1>FAQs</h1>
-            <p>Explore the heartwarming and inspiring experiences shared by our valued counts</p>
-            <div className='faqs-left-right-section'>
-                <div className="faqs-left">
-                    <ul className="faqs-links">
-                        <li className="faqs-item" onClick={GeneralFaqs}>
+        <div className="">
+            <p className="text-5xl font-semibold text-[#353535] Raleway_Bold text-center mt-10">FAQs</p>
+
+            <p className="mt-4 text-[17px] text-gray-600 font-semibold DMSans_Medium w-[40%] m-auto text-center">Explore the heartwarming and inspiring experiences shared by our valued counts</p>
+            <div className='flex justify-center gap-20 mt-10'>
+                <div className="">
+                  
+                        <p className="font-semibold text-[#FF8A00] p-4 cursor-pointer	bg-white hover:bg-[#FF66121A] text-[30px] rounded-full text-center" onCpck={GeneralFaqs}>
                             General
-                        </li>
-                        <li className="faqs-item" onClick={AdmissionFaqs}>
+                        </p>
+                        <p className="font-semibold text-[#FF8A00] p-4 cursor-pointer bg-white hover:bg-[#FF66121A] text-[30px] rounded-full text-center" onCpck={AdmissionFaqs}>
                             Admission
-                        </li>
-                        <li className="faqs-item" onClick={EventFaqs}>
+                        </p>
+                        <p className="font-semibold text-[#FF8A00] p-4 cursor-pointer bg-white hover:bg-[#FF66121A] text-[30px] rounded-full text-center" onCpck={EventFaqs}>
                             Event
-                        </li>
-                        <li className="faqs-item" onClick={CoursesFaqs}>
+                        </p>
+                        <p className="font-semibold text-[#FF8A00] p-4 cursor-pointer bg-white hover:bg-[#FF66121A] text-[30px] rounded-full text-center" onCpck={CoursesFaqs}>
                             Courses
-                        </li>
-                        <li className="faqs-item" onClick={ServicesFaqs}>
+                        </p>
+                        <p className="font-semibold text-[#FF8A00] p-4 cursor-pointer bg-white hover:bg-[#FF66121A] text-[30px] rounded-full text-center" onCpck={ServicesFaqs}>
                             Services
-                        </li>
-                    </ul>
+                        </p>
                 </div>
                 <div className="faqs-right">
                     <FaqsAccordion />

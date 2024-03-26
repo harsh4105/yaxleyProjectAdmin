@@ -16,6 +16,7 @@
 
 .Dashboard-Events-heading {
     margin: 20px 0;
+    font-family: DMSans_18pt_Light;
 }
 
 .Dashboard-Events-heading h2 {
@@ -138,8 +139,9 @@
     outline: none;
     border: 2px solid #555555;
     width: 400px;
-    height: 200px;
+    height: 225px;
     margin-left: 50px;
+    font-family:DMSans_18pt_Light ;
 }
 
 .all-events-webinar-pointers-div {
@@ -151,7 +153,9 @@
 
 .pointer-heading {
     width: 90%;
-    margin: 10px;
+    margin-top: 20px;
+    /* margin: 10px; */
+    font-family: DMSans_18pt_Light;
 }
 
 .pointers {
@@ -184,6 +188,7 @@
     width: 90%;
     display: flex;
     justify-content: right;
+    font-family: DMSans_18pt_Medium;
 }
 
 .pushlish-btn button {
@@ -192,6 +197,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
+    font-family: DMSans_18pt_Medium;
 }
 .pushlish-btn button:active {
     background-color: hsl(21, 82%, 83%);
@@ -217,5 +223,6 @@
 }
 .previously-heading{
     margin: 20px 0;
+    margin-top: 40px;
     text-align: center;
 }

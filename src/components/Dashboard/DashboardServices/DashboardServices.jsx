@@ -8,14 +8,16 @@ const DashboardServices = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetchData();
-  });
+    const fetchData = async () => {
+      const response = await fetch('http://13.127.109.224:4000/dashboardServices');
+      const result = await response.json();
+      setData(result);
+    };
 
-  const fetchData = async () => {
-    const response = await fetch('http://localhost:4000/dashboardServices');
-    const result = await response.json();
-    setData(result);
-  };
+    fetchData();
+  }, []);
+
+
 
   return (
     <div className='Dashboard-Home'>

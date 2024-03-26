@@ -9,6 +9,7 @@
 
 .Dashboard-home-heading{
     margin: 20px 0;
+    font-family: DMSans_18pt_Medium;
 }
 .Dashboard-contant-section{
     /* width: 80%; */
@@ -27,6 +28,7 @@
     align-items: center;
     width: 90%;
     margin: auto;
+    font-family: DMSans_18pt_Light;
 }
 .destination-add-country-heading-section span{
     color: #FF6612;  
@@ -54,12 +56,15 @@
     border-radius: 30px;
     border: 2px solid rgb(110, 109, 109) ;
     margin-bottom: 10px;
+    font-family: DMSans_18pt_Light;
 }
 .section-first-block textarea{
     width: 80%;
-    padding: 15px 20px;
+    padding: 12px 20px;
     border-radius: 30px;
     border: 2px solid rgb(110, 109, 109) ;
+    font-family: DMSans_18pt_Light;
+
 }
 .section-second-block{
     display: flex;
@@ -69,7 +74,7 @@
     width: 40%;
 }
 .section-second-block img{
-    width: 250px;
+    width: 260px;
     /* border-radius: 50%; */
 }
 .section-second-text-inputs{
@@ -78,10 +83,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-family: DMSans_18pt_Light;
+
 }
 
 .second-section-inputs{
-    width: 80%;
+    width: 85%;
     padding: 15px 20px;
     border-radius: 30px;
     border: 2px solid rgb(110, 109, 109) ;
@@ -98,6 +105,7 @@
 
 .importantLinks-section-headings{
     margin-left: 60px;
+    font-family: DMSans_18pt_Medium;
 }
 
 .importantLinks-section-links{
@@ -143,6 +151,8 @@
 .pointers-heading{
     width: 83%;
     margin-bottom: 20px 10px 0 0;
+    margin-top: 20px;
+    font-family: DMSans_18pt_Medium;
 }
 
 .pointers-input{

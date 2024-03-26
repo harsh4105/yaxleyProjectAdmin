@@ -1,68 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import './BatchesForYou.css';
 import UpcomingImg from '../images/UpcomingImg.png'
 import BatchesForYouImg from '../images/BatchesForYouImg.png'
+import webinar from "../images/webinars.jpg"
+import student from "../images/student.jpg"
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+
+
 const BatchesForYou = () => {
-   const [currentSlide, setCurrentSlide] = useState(0);
-   const totalSlides = 3;
 
-   const goToSlide = (slideIndex) => {
-      setCurrentSlide(slideIndex);
-   };
+   var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
 
-   const nextSlide = () => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
-   };
+   const fetchData = async () => {
+      const response = await fetch('http://13.127.109.224:4000/dashboardTestPrep');
+      const result = await response.json();
+      setData(result);
+  };
+   useEffect(()=>{
+      fetchData();
+  },[])
+  const [data,setData]=useState([]);
+  
 
-   const prevSlide = () => {
-      setCurrentSlide((prevSlide) => (prevSlide - 1 + totalSlides) % totalSlides);
-   };
 
+   console.log(data,"asdfsdf")
    return (
-      <div className="BatchesForYou-carousel-container">
-         <div className="BatchesForYou-section">
-            <div className="BatchesForYou-heading">
-               <img src={BatchesForYouImg} alt="BatchesForYouImg" />
+   
+      <div className=''>
+      <Slider {...settings}  className='Test-repo_container'>
+      {
+         data.map((values)=>(
+            <div className='inner_slide_container'>
+               <img src={webinar} className='slide_image'/>
+               <div className='inner_slide_container_content'>
+                  <p className='inner_slide_container_batchName'>{values.batchName}</p>
+                  <p className='inner_slide_container_description'>{values.description}</p>
+                        <div className='inner_slide_container_points'>{values.P1}</div>
+                        <div className='inner_slide_container_points'>{values.P2}</div>
+                        <div className='inner_slide_container_points'>{values.P3}</div>
+                        <div className='inner_slide_container_points'>{values.P4}</div>
+
+               </div>
             </div>
-         </div>
-         <div className="BatchesForYou-carousel">
-            <div className="BatchesForYou-slides" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-               <div className="BatchesForYou-slide slide1">
-                  <img src={UpcomingImg} alt="UpcomingImg" />
-               </div>
-               <div className="BatchesForYou-slide slide2">
-                  <img src={UpcomingImg} alt="UpcomingImg" />
-               </div>
-               <div className="BatchesForYou-slide slide3">
-                  <img src={UpcomingImg} alt="UpcomingImg" />
-               </div>
-            </div>
-         </div>
-         <button onClick={prevSlide} className="prev-btn">&#10094;</button>
-         <button onClick={nextSlide} className="next-btn">&#10095;</button>
-         <div className="dots">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-               <span
-                  key={index}
-                  className={index === currentSlide ? 'dot active' : 'dot'}
-                  onClick={() => goToSlide(index)}
-               ></span>
-            ))}
-         </div>
-      </div>
+         ))
+      }
+    </Slider>
+    </div>
    );
 };
 
 export default BatchesForYou;
-
-{/* <img src={UpcomingImg} alt="UpcomingImg" />
-
-
-<div className="BatchesForYou-section">
-         <div className="BatchesForYou-heading">
-            <img src={BatchesForYouImg} alt="BatchesForYouImg" />
-         </div>
-
-      </div> */}
-
-// BatchesForYou
